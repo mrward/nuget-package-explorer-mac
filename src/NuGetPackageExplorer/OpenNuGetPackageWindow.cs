@@ -19,6 +19,8 @@ namespace NuGetPackageExplorer
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
+
+			closeButton.KeyEquivalent = "\r";
 		}
 	}
 }
