@@ -18,6 +18,12 @@ namespace NuGetPackageExplorer
 			mainWindowController = new MainWindowController ();
 			mainWindowController.Window.MakeKeyAndOrderFront (this);
 		}
+
+		partial void openFromFeed (NSObject sender)
+		{
+			var controller = new OpenNuGetPackageWindowController ();
+			NSApplication.SharedApplication.RunModalForWindow (controller.Window);
+		}
 	}
 }
 
