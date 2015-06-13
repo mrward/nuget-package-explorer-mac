@@ -39,5 +39,11 @@ namespace NuGetPackageExplorer
 		{
 			NSApplication.SharedApplication.StopModal ();
 		}
+
+		[Export ("cancel:")]
+		void CancelOperation (NSObject sender)
+		{
+			Close ();
+		}
 	}
 }
