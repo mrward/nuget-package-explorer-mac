@@ -70,7 +70,7 @@
                             </menuItem>
                             <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                 <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
+                                    <action selector="openDocument:" target="-1" id="Ifn-BI-15t"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open from Feed..." keyEquivalent="g" id="hF6-cT-9Dl">

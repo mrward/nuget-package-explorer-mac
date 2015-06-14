@@ -7,6 +7,7 @@ namespace NuGetPackageExplorer
 {
 	public partial class AppDelegate : NSApplicationDelegate
 	{
+		const int NSFileHandlingPanelOKButton = 1;
 		MainWindowController mainWindowController;
 
 		public AppDelegate ()
@@ -23,6 +24,22 @@ namespace NuGetPackageExplorer
 		{
 			var controller = new OpenNuGetPackageWindowController ();
 			NSApplication.SharedApplication.RunModalForWindow (controller.Window);
+		}
+
+		[Export ("openDocument:")]
+		void OpenDocument (NSObject sender)
+		{
+			var panel = new NSOpenPanel () {
+				AllowedFileTypes = new [] {"nupkg"},
+				AllowsMultipleSelection = false,
+				CanChooseDirectories = false,
+				ShowsHiddenFiles = true,
+				Title = "Open NuGet Package (*.nupkg)"
+			};
+
+			if (panel.RunModal () == NSFileHandlingPanelOKButton) {
+				NSUrl file = panel.Url;
+			}
 		}
 	}
 }
